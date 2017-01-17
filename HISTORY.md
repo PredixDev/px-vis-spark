@@ -1,3 +1,7 @@
+v0.2.2
+==================
+* Updated to cool grays
+
 v0.2.1
 ==================
 * changing ghp.sh to account for Alpha releases
