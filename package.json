@@ -2,7 +2,7 @@
     "name": "px-vis-spark",
     "author": "General Electric",
     "description": "A visualization element usually referred to as a sparkline - a small line chart or bar chart without axes or measures that provides a user a glimpse of a trend.",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "private": true,
     "extName": null,
     "repository": {

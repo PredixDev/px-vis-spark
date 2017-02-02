@@ -1,3 +1,7 @@
+v0.2.3
+==================
+* added OSS_Notice.pdf
+
 v0.2.2
 ==================
 * Updated to cool grays
