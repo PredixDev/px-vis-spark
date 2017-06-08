@@ -1,3 +1,7 @@
+v1.0.3
+==================
+* bump vis version to 2.0
+
 v1.0.2
 ==================
 * fix imports and dependencies per #6
