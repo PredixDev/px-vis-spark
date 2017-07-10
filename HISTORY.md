@@ -1,3 +1,8 @@
+v2.0.0
+==================
+* update dependencies for design refresh
+* component redesign
+
 v1.1.0
 ==================
 * bump vis version to 2.0
