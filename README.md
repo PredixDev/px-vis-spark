@@ -1,6 +1,5 @@
 #px-vis-spark [![Build Status](https://travis-ci.org/PredixDev/px-vis-spark.svg?branch=master)](https://travis-ci.org/PredixDev/px-vis-spark)
 
-[![px-vis-spark demo](px-vis-spark.png?raw=true)](https://github.com/PredixDev/px-vis-spark)
 
 ## Overview
 
