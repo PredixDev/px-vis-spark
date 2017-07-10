@@ -28,8 +28,12 @@ function runCustomTests() {
       },1000);
     });
     var fixture = document.getElementById('px_vis_spark_2');
-    test('Spark bar discrete height is 40', function(done) {
-      assert.equal(getComputedStyle(fixture.querySelector('svg')).height,"40px");
+    // test('Spark bar discrete height is 40', function(done) {
+    //   assert.equal(getComputedStyle(fixture.querySelector('svg')).height,"40px");
+    //   done();
+    // });
+    test('Spark bar discrete height is 150', function(done) {
+      assert.equal(getComputedStyle(fixture.querySelector('svg')).height,"150px");
       done();
     });
     test('Spark bar discrete width is 250', function(done) {
