@@ -1,9 +1,9 @@
-#px-vis-spark [![Build Status](https://travis-ci.org/PredixDev/px-vis-spark.svg?branch=master)](https://travis-ci.org/PredixDev/px-vis-spark)
+# px-vis-spark [![Build Status](https://travis-ci.org/PredixDev/px-vis-spark.svg?branch=master)](https://travis-ci.org/PredixDev/px-vis-spark)
 
 
 ## Overview
 
-px-vis-spark is a Predix UI component that provides a visualization element usually referred to as sparkline - a small line chart without axes or measures that provides a user a glimpse of a trend. Additional options exist for displaying a simple bar chart (with all positive values) or a simple win/loss chart (with positive and negative values).
+`Px-vis-spark` is a Predix UI component that provides a visualization element usually referred to as sparkline - a small line chart without axes or measures that provides a user a glimpse of a trend. Additional options exist for displaying a simple bar chart (with all positive values) or a simple win/loss chart (with positive and negative values).
 
 ## Usage
 
@@ -13,17 +13,17 @@ px-vis-spark is a Predix UI component that provides a visualization element usua
 3. bower
 4. [webcomponents-lite.js polyfill](https://github.com/webcomponents/webcomponentsjs)
 
-Node, npm and bower are necessary to install the component and dependencies. webcomponents.js adds support for web components and custom elements to your application.
+Node, npm, and bower are necessary to install the component and dependencies. webcomponents.js adds support for web components and custom elements to your application.
 
 ## Getting Started
 
-First, install the component via bower on the command line.
+First, install the component via bower on the command line:
 
 ```
 bower install px-vis-spark --save
 ```
 
-Second, import the component to your application with the following tag in your head.
+Second, import the component in your application with the following tag in your head:
 
 ```
 <link rel="import" href="/bower_components/px-vis-spark/px-vis-spark.html"/>
