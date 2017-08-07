@@ -1,3 +1,10 @@
+v2.1.0
+==================
+* Change CodePen to Glitch
+* Use updated demo snippet
+* Added PxVisBehavior.updateStylesOverride behavior
+* Added ability to dynamically update stuff drawn with css variable
+
 v2.0.0
 ==================
 * update dependencies for design refresh

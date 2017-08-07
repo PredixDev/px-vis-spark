@@ -16,7 +16,7 @@
 <link rel="import" href="../px-vis-spark.html"/>
 
 <!-- Demo DOM module -->
-<dom-module id="local-element-demo">
+<dom-module id="px-vis-spark-demo">
   <template>
     <style include="px-demo-styles" is="custom-style"></style>
 
@@ -53,10 +53,10 @@
       <!-- END Component ------------------------------------------------------>
 
       <px-demo-component-snippet
-          element-properties="{{props}}"
-          element-name="px-vis-spark"
-          links-includes="[[linksIncludes]]"
-          scripts-includes="[[scriptsIncludes]]">
+        element-properties="{{props}}"
+        element-name="px-vis-spark"
+        codepen-link="https://glitch.com/edit/#!/px-vis-spark"
+        suppress-property-values="[[suppressPropertyValues]]">
       </px-demo-component-snippet>
     </px-demo-interactive>
 
@@ -72,7 +72,7 @@
 </dom-module>
 <script>
   Polymer({
-    is: 'local-element-demo',
+    is: 'px-vis-spark-demo',
 
     properties: {
 
@@ -101,19 +101,11 @@
         }
       },
 
-      scriptsIncludes: {
+      suppressPropertyValues: {
         type: Array,
-        value: function() {
-          return ['https://cdn.rawgit.com/foretagsplatsen/numbro/1.7.1/numbro.js'];
-        }
+        value: function() { return ['chartData']; }
       },
 
-      linksIncludes: {
-        type: Array,
-        value: function() {
-          return ['px-vis/px-polygit-imports-vis.html', 'px-datetime-common/px-polygit-imports-datetime.html', 'px-number-formatter/px-number-formatter.html'];
-        }
-      }
     },
 
     /**
