@@ -46,7 +46,8 @@
             width="{{props.width.value}}"
             height="{{props.height.value}}"
             data="{{props.data.value}}"
-            prevent-resize="{{props.preventResize.value}}">
+            prevent-resize="{{props.preventResize.value}}"
+            disable-gradient="{{props.disableGradient.value}}">
           </px-vis-spark>
         </div>
       </px-demo-component>
@@ -116,6 +117,12 @@
       preventResize: {
         type: Boolean,
         defaultValue: true,
+        inputType: 'toggle'
+      },
+
+      disableGradient: {
+        type: Boolean,
+        defaultValue: false,
         inputType: 'toggle'
       },
 

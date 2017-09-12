@@ -11,6 +11,8 @@
 <link rel="import" href="../iron-resizable-behavior/iron-resizable-behavior.html" />
 <link rel="import" href="../px-simple-win-loss-chart/px-simple-win-loss-chart.html" />
 <link rel="import" href="../px-vis/px-vis-behavior-common.html"/>
+<link rel="import" href="../px-vis/px-vis-area-svg.html" />
+
 
 <!--
 
@@ -53,13 +55,24 @@
           </px-vis-scale>
           <px-vis-line-svg
             svg="[[svg]]"
-            series-id="mySeries"
+            series-id="spark"
             chart-data="[[data]]"
             complete-series-config="[[_seriesConfig]]"
             x="[[x]]"
             y="[[y]]"
             domain-changed="[[domainChanged]]">
           </px-vis-line-svg>
+          <template is="dom-if" if="{{!disableGradient}}" restamp>
+            <px-vis-area-svg
+              svg="[[svg]]"
+              series-id="spark"
+              complete-series-config="[[_areaConfig]]"
+              chart-data="[[_stackData]]"
+              x="[[x]]"
+              y="[[y]]"
+              domain-changed="[[domainChanged]]">
+            </px-vis-area-svg>
+          </template>
         </template>
         <template is="dom-if" if="{{_isEqual(type,'bar')}}">
           <px-simple-win-loss-chart
@@ -121,6 +134,10 @@
         type: Array,
         observer: '_dataChanged'
       },
+      _stackData: {
+        type: Object,
+        computed: '_computeStack(data.*, type)'
+      },
       /**
        * Whether the vis-spark should resize as window size is adjusted.
        * @property preventResize
@@ -154,16 +171,39 @@
       },
       _extents: {
         type: Object,
-        value: {
-          "x": [Infinity,-Infinity],
-          "y": [0,-Infinity]
+        value: function() {
+          return {
+            "x": [Infinity,-Infinity],
+            "y": [Infinity,-Infinity]
+          }
         }
+      },
+      _gradient: {
+        type: Object
+      },
+      _gradientStop1: {
+        type: Object
+      },
+      _gradientStop2: {
+        type: Object
+      },
+      _gradientStop3: {
+        type: Object
+      },
+      disableGradient: {
+        type: Boolean,
+        value: false
       }
     },
     listeners: {
       'iron-resize': '_onIronResize',
       "px-data-vis-colors-applied" : '_generateSeriesConfig'
     },
+
+    observers: [
+      'createGradient(svg, _seriesConfig)'
+    ],
+
     _onIronResize: function() {
       this.debounce('ironresize', function() {
         if(this.preventResize){
@@ -176,10 +216,12 @@
       },50);
     },
     _isEqual: function(a, b) {
-      return a===b ? true : false;
+      return a===b;
     },
     _dataChanged: function() {
-      this.set("_extents", {"x": [Infinity,-Infinity],"y": [0,-Infinity]});
+      this.set("_extents", {"x": [Infinity,-Infinity],"y": [Infinity,-Infinity]});
+
+      this._adjustGradients();
     },
     attached: function() {
       this._onIronResize();
@@ -187,14 +229,86 @@
 
     _generateSeriesConfig: function() {
       this.set('_seriesConfig', {
-        'mySeries': {
-          "name":"My-Series",
-          "type": "line",
+        'spark': {
+          "name":"spark",
           "x": 'x',
           "y": 'y',
           'color': this._getColor(0)
         }
-      })
+      });
+      this.set('_areaConfig', {
+        'spark': {
+          "name":"spark",
+          "x": 'x',
+          "y": 'y',
+          'color': 'url(#sparkGradient)'
+        }
+      });
+    },
+
+    _computeStack: function() {
+      if(!this.data || this.data.length === 0) { return; }
+
+      if(this.type !== 'line') {
+        return [];
+      }
+
+      var stack = Px.d3.stack();
+      stack.keys(['y']);
+      return stack(this.data);
+    },
+
+    createGradient: function() {
+      if(!this._gradient) {
+        this._gradient = this.svg.append('defs').append('linearGradient')
+          .attr('id', 'sparkGradient')
+          .attr('x1', 0)
+          .attr('x2', 0)
+          .attr('y1', 0)
+          .attr('y2', 1);
+
+        this._gradientStop1 = this._gradient.append('stop')
+          .attr('offset', '0%')
+          .attr('stop-opacity', '0.15');
+
+        this._gradientStop2 = this._gradient.append('stop')
+          .attr('stop-opacity', '0.05');
+
+        this._gradientStop3 = this._gradient.append('stop')
+          .attr('stop-opacity', '0.15');
+
+        this._adjustGradients();
+      }
+
+      this._gradientStop1
+        .attr('stop-color', this._getColor(0));
+      this._gradientStop2
+        .attr('stop-color', this._getColor(0));
+        this._gradientStop3
+        .attr('stop-color', this._getColor(0))
+    },
+
+    _adjustGradients: function() {
+      if(!this.data || !this._gradientStop3) { return; }
+
+      var isNeg = false;
+      for(var i = 0; i < this.data.length; i++) {
+        if(this.data[i]['y'] < 0) {
+          isNeg = true;
+        }
+      }
+
+      if(isNeg) {
+        var y = this.y(0),
+            r = this.y.range(),
+            p = (r[0]-r[1]) / y * 100;
+
+        this._gradientStop2.attr('offset', p + '%');
+        this._gradientStop3.attr('offset', '100%');
+      } else {
+        this._gradientStop2.attr('offset', '70%');
+        this._gradientStop3.attr('offset', '0%');
+      }
     }
 
   });

@@ -1,3 +1,8 @@
+v3.0.0
+==================
+* Changed extents to use min of data instead of 0
+* Added gradient area to line spark
+
 v2.1.0
 ==================
 * Change CodePen to Glitch
