@@ -5,17 +5,92 @@ function runCustomTests() {
   // This is the placeholder suite to place custom tests in
   // Use testCase(options) for a more convenient setup of the test cases
   suite('Custom Automation Tests for px-vis-spark (line)', function() {
+    var fixture = document.getElementById('px_vis_spark_1');
+
+    suiteSetup(function(done) {
+      var rendered = function() {
+        fixture.removeEventListener('px-vis-line-svg-rendering-ended', rendered);
+        done();
+      };
+      fixture.addEventListener('px-vis-line-svg-rendering-ended', rendered);
+    });
+
     test('Spark line fixture is created', function() {
       assert.isTrue(document.getElementById('px_vis_spark_1') !== null);
     });
-    var fixture = document.getElementById('px_vis_spark_1');
-    test('Spark line default height is 50', function(done) {
+    test('Spark line default height is 50', function() {
       assert.equal(getComputedStyle(fixture.querySelector('svg')).height,"50px");
-      done();
     });
-    test('Spark line default width is 300', function(done) {
+    test('Spark line default width is 300', function() {
       assert.equal(getComputedStyle(fixture.querySelector('svg')).width,"300px");
-      done();
+    });
+
+    test('Spark line is created', function() {
+      var path = fixture.svg.select('path.series-line'),
+          d = path.attr('d').split(' ').join('').split(',').join('');
+
+      assert.equal('M00L30050', d);
+    });
+
+    test('Spark area is created', function() {
+      var path = fixture.svg.select('path.series-area'),
+          d = path.attr('d').split(' ').join('').split(',').join('');
+
+      assert.equal('M00L30050L300174L0174Z', d);
+    });
+
+    test('gradient is created', function() {
+      var grad = fixture.svg.select('linearGradient'),
+          stops = grad.selectAll('stop').nodes();
+
+      assert.equal(Px.d3.select(stops[0]).attr('offset'), '0%');
+      assert.equal(Px.d3.select(stops[1]).attr('offset'), '70%');
+      assert.equal(Px.d3.select(stops[2]).attr('offset'), '0%');
+
+      assert.equal(Px.d3.select(stops[0]).attr('stop-opacity'), '0.15');
+      assert.equal(Px.d3.select(stops[1]).attr('stop-opacity'), '0.05');
+      assert.equal(Px.d3.select(stops[2]).attr('stop-opacity'), '0.15');
+    });
+  });
+
+  suite('px-vis-spark (line) updates with negative values', function() {
+    var fixture = document.getElementById('px_vis_spark_1');
+
+    suiteSetup(function(done) {
+      var rendered = function() {
+        fixture.removeEventListener('px-vis-line-svg-rendering-ended', rendered);
+        done();
+      };
+      fixture.addEventListener('px-vis-line-svg-rendering-ended', rendered);
+
+      fixture.set('data', [{"x": 1397102460000,"y": 0.56},{"x": 1397139660000,"y": 0.4}, {"x": 1397176860000,"y": -0.56},{"x": 1397214060000,"y": -0.4}]);
+    });
+
+    test('Spark line is created', function() {
+      var path = fixture.svg.select('path.series-line'),
+          d = path.attr('d').split(' ').join('').split(',').join('');
+
+      assert.equal('M00L30050L600349L900299', d);
+    });
+
+    test('Spark area is created', function() {
+      var path = fixture.svg.select('path.series-area'),
+          d = path.attr('d').split(' ').join('').split(',').join('');
+
+      assert.equal('M00L30050L600349L900299L900174L600174L300174L0174Z', d);
+    });
+
+    test('gradient is updated', function() {
+      var grad = fixture.svg.select('linearGradient'),
+          stops = grad.selectAll('stop').nodes();
+
+      assert.equal(Px.d3.select(stops[0]).attr('offset'), '0%');
+      assert.equal(Px.d3.select(stops[1]).attr('offset'), '50%');
+      assert.equal(Px.d3.select(stops[2]).attr('offset'), '100%');
+
+      assert.equal(Px.d3.select(stops[0]).attr('stop-opacity'), '0.15');
+      assert.equal(Px.d3.select(stops[1]).attr('stop-opacity'), '0.05');
+      assert.equal(Px.d3.select(stops[2]).attr('stop-opacity'), '0.15');
     });
   });
 

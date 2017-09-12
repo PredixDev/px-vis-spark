@@ -11,6 +11,7 @@
 <link rel="import" href="../iron-resizable-behavior/iron-resizable-behavior.html" />
 <link rel="import" href="../px-simple-win-loss-chart/px-simple-win-loss-chart.html" />
 <link rel="import" href="../px-vis/px-vis-behavior-common.html"/>
+<link rel="import" href="../px-vis/px-vis-behavior-d3.html"/>
 <link rel="import" href="../px-vis/px-vis-area-svg.html" />
 
 
@@ -36,22 +37,21 @@
       <div id="wrapper" class="wrapper flex">
         <template is="dom-if" if="{{_isEqual(type,'line')}}">
           <px-vis-svg
-            width="{{width}}"
-            height="{{height}}"
+            width="[[width]]"
+            height="[[height]]"
             svg="{{svg}}">
           </px-vis-svg>
           <px-vis-scale
             x-axis-type="time"
             y-axis-type="linear"
             complete-series-config="[[_seriesConfig]]"
-            data-extents="{{_extents}}"
-            width="{{width}}"
-            height="{{height}}"
-            chart-data="{{data}}"
+            data-extents="[[_extents]]"
+            width="[[width]]"
+            height="[[height]]"
+            chart-data="[[data]]"
             x="{{x}}"
             y="{{y}}"
-            domain-changed="{{domainChanged}}"
-            selected-domain="[[selectedDomain]]">
+            domain-changed="{{domainChanged}}">
           </px-vis-scale>
           <px-vis-line-svg
             svg="[[svg]]"
@@ -105,6 +105,7 @@
       Polymer.IronResizableBehavior,
       PxColorsBehavior.dataVisColorTheming,
       PxColorsBehavior.getSeriesColors,
+      PxVisBehaviorD3.domainUpdateNotify,
       PxVisBehavior.updateStylesOverride
     ],
 
@@ -201,7 +202,8 @@
     },
 
     observers: [
-      'createGradient(svg, _seriesConfig)'
+      'createGradient(svg, _areaConfig)',
+      '_adjustGradients(domainChanged)'
     ],
 
     _onIronResize: function() {
@@ -220,8 +222,6 @@
     },
     _dataChanged: function() {
       this.set("_extents", {"x": [Infinity,-Infinity],"y": [Infinity,-Infinity]});
-
-      this._adjustGradients();
     },
     attached: function() {
       this._onIronResize();
@@ -301,13 +301,15 @@
       if(isNeg) {
         var y = this.y(0),
             r = this.y.range(),
-            p = (r[0]-r[1]) / y * 100;
+            p = y / (r[0]-r[1]) * 100;
 
         this._gradientStop2.attr('offset', p + '%');
         this._gradientStop3.attr('offset', '100%');
+
       } else {
         this._gradientStop2.attr('offset', '70%');
         this._gradientStop3.attr('offset', '0%');
+
       }
     }
 
