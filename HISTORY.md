@@ -1,3 +1,7 @@
+v3.0.1
+==================
+* Update vis dependency
+
 v3.0.0
 ==================
 * Changed extents to use min of data instead of 0
