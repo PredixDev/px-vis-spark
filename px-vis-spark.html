@@ -133,6 +133,9 @@
        */
       data: {
         type: Array,
+        value: function() {
+          return [];
+        },
         observer: '_dataChanged'
       },
       _stackData: {
@@ -207,11 +210,8 @@
     ],
 
     _onIronResize: function() {
+      if(this.preventResize || !this.data || this.data.length === 0) { return; }
       this.debounce('ironresize', function() {
-        if(this.preventResize){
-          return;
-        }
-
         var wrapperRect = this.$$('#wrapper').getBoundingClientRect();
         this.set('width', Math.max(wrapperRect.width,0));
         this.set('height', Math.max(wrapperRect.height,0));
