@@ -150,7 +150,8 @@
        */
       preventResize:{
         type: Boolean,
-        value: false
+        value: false,
+        observer: '_onIronResize'
       },
       /**
       * Width of the spark.
@@ -222,11 +223,8 @@
     },
     _dataChanged: function() {
       this.set("_extents", {"x": [Infinity,-Infinity],"y": [Infinity,-Infinity]});
-    },
-    attached: function() {
       this._onIronResize();
     },
-
     _generateSeriesConfig: function() {
       this.set('_seriesConfig', {
         'spark': {
