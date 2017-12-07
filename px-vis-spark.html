@@ -23,6 +23,14 @@
     <px-vis-spark type="bar" width="250" height="50" data="[1,2,3]"></px-vis-spark>
     <px-vis-spark type="winLoss" width="300" height="50" data="[1,-2,3]"></px-vis-spark>
 
+### Styling
+The following custom properties are available for styling:
+
+Custom property | Description
+----------------|-------------
+`--px-vis-series-color-0` | Color of the line and area
+
+`--px-vis-font-family` | The font family for all labels and text
 
 @element px-vis-spark
 @blurb A visualization element usually referred to as a sparkline - a small line chart or bar chart without axes or measures that provides a user a glimpse of a trend.
@@ -106,7 +114,8 @@
       PxColorsBehavior.dataVisColorTheming,
       PxColorsBehavior.getSeriesColors,
       PxVisBehaviorD3.domainUpdateNotify,
-      PxVisBehavior.updateStylesOverride
+      PxVisBehavior.updateStylesOverride,
+      PxVisBehavior.commonMethods
     ],
 
     properties: {
@@ -150,8 +159,7 @@
        */
       preventResize:{
         type: Boolean,
-        value: false,
-        observer: '_onIronResize'
+        value: false
       },
       /**
       * Width of the spark.
@@ -159,8 +167,8 @@
       * @type String
       */
       width: {
-          type: String,
-          value: "300"
+        type: String,
+        value: "300"
       },
       /**
       * Height of the spark.
@@ -168,8 +176,8 @@
       * @type String
       */
       height: {
-          type: String,
-          value: "50"
+        type: String,
+        value: "50"
       },
       _seriesConfig: {
         type: Object
@@ -211,7 +219,10 @@
     ],
 
     _onIronResize: function() {
-      if(this.preventResize || !this.data || this.data.length === 0) { return; }
+      if(this.preventResize) {
+        return;
+      }
+
       this.debounce('ironresize', function() {
         var wrapperRect = this.$$('#wrapper').getBoundingClientRect();
         this.set('width', Math.max(wrapperRect.width,0));
@@ -223,7 +234,6 @@
     },
     _dataChanged: function() {
       this.set("_extents", {"x": [Infinity,-Infinity],"y": [Infinity,-Infinity]});
-      this._onIronResize();
     },
     _generateSeriesConfig: function() {
       this.set('_seriesConfig', {
@@ -257,6 +267,10 @@
     },
 
     createGradient: function() {
+      if(this._isD3Empty(this.svg)) {
+        return;
+      }
+
       if(!this._gradient) {
         this._gradient = this.svg.append('defs').append('linearGradient')
           .attr('id', 'sparkGradient')
