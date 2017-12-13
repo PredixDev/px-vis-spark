@@ -219,7 +219,7 @@ Custom property | Description
     ],
 
     _onIronResize: function() {
-      if(this.preventResize) {
+      if(this.preventResize || this.preventResize === undefined) {
         return;
       }
 

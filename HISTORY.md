@@ -1,5 +1,5 @@
 ==================
-* Polymer 2 hybrid
+* Polymer 1.x/2.x hybrid element support
 
 v3.0.4
 ==================

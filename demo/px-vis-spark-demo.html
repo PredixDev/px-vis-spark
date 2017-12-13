@@ -18,28 +18,30 @@
 <!-- Demo DOM module -->
 <dom-module id="px-vis-spark-demo">
   <template>
-    <style include="px-demo-styles" is="custom-style"></style>
+    <custom-style>
+      <style include="px-demo-styles" is="custom-style"></style>
+    </custom-style>
 
     <!-- Header -->
     <px-demo-header
-        module-name="px-vis-spark"
-        description="The px-vis-spark is a visualization element usually referred to as a sparkline - a small line or bar chart without axes or measures that provides a user a glimpse of a trend."
-        mobile tablet desktop>
+      module-name="px-vis-spark"
+      description="The px-vis-spark is a visualization element usually referred to as a sparkline - a small line or bar chart without axes or measures that provides a user a glimpse of a trend."
+      mobile tablet desktop>
     </px-demo-header>
 
     <!-- Interactive -->
     <px-demo-interactive>
       <!-- Configs -->
-      <px-demo-configs configs="[[configs]]" props="{{props}}" chosen-config="{{chosenConfig}}"></px-demo-configs>
+      <px-demo-configs slot="px-demo-configs" configs="[[configs]]" props="{{props}}" chosen-config="{{chosenConfig}}"></px-demo-configs>
 
       <!-- Props -->
-      <px-demo-props props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
+      <px-demo-props slot="px-demo-props" props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
 
       <!-- Code Editor -->
-      <px-demo-code-editor props="{{props}}"></px-demo-code-editor>
+      <px-demo-code-editor slot="px-demo-code-editor" props="{{props}}"></px-demo-code-editor>
 
       <!-- Component ---------------------------------------------------------->
-      <px-demo-component class="flex__item flex">
+      <px-demo-component slot="px-demo-component">
 
         <div style="width:100%; height: 100%;">
           <px-vis-spark
@@ -55,6 +57,7 @@
       <!-- END Component ------------------------------------------------------>
 
       <px-demo-component-snippet
+        slot="px-demo-component-snippet"
         element-properties="{{props}}"
         element-name="px-vis-spark"
         codepen-link="https://glitch.com/edit/#!/px-vis-spark"
