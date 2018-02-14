@@ -1,3 +1,7 @@
+v3.1.1
+==================
+* Fix demo for IE
+
 v3.1.0
 ==================
 * Polymer 1.x/2.x hybrid element support
