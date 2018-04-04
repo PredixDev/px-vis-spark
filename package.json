@@ -2,12 +2,12 @@
   "name": "px-vis-spark",
   "author": "General Electric",
   "description": "A visualization element usually referred to as a sparkline - a small line chart or bar chart without axes or measures that provides a user a glimpse of a trend.",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "private": false,
   "extName": null,
   "repository": {
     "type": "git",
-    "url": "https://github.com/PredixDev/px-vis-spark.git"
+    "url": "https://github.com/predixdesignsystem/px-vis-spark.git"
   },
   "homepage": "https://www.predix-ui.com/",
   "devDependencies": {
