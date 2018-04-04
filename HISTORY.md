@@ -3,6 +3,7 @@ v4.0.0
 * Upgrade to px-vis v5
 * Breaking Changes:
   * See px-vis release notes for potential breaking changes
+  
 v3.1.1
 ==================
 * Fix demo for IE
