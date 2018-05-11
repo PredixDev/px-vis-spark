@@ -59,11 +59,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 19,
+              "line": 35,
               "column": 4
             },
             "end": {
-              "line": 27,
+              "line": 43,
               "column": 5
             }
           },
@@ -75,17 +75,17 @@
         },
         {
           "name": "domainChanged",
-          "type": "boolean",
-          "description": "Boolean switching when the domain(s) has(have) changed\n\nServes as a trigger for many elements to redraw",
+          "type": "number",
+          "description": "Number which increments up when the domain(s) has(have) changed.\n\n0 (false) indicates that domains have not been set.\n\nServes as a trigger for many elements to redraw.",
           "privacy": "public",
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-d3.html",
             "start": {
-              "line": 538,
+              "line": 527,
               "column": 4
             },
             "end": {
-              "line": 542,
+              "line": 531,
               "column": 5
             }
           },
@@ -94,8 +94,8 @@
               "notify": true
             }
           },
-          "defaultValue": "null",
-          "inheritedFrom": "PxVisBehaviorD3.domainUpdateNotify"
+          "defaultValue": "0",
+          "inheritedFrom": "PxVisBehaviorD3.domainUpdate"
         },
         {
           "name": "_updateStyles",
@@ -105,11 +105,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 3200,
+              "line": 3205,
               "column": 4
             },
             "end": {
-              "line": 3202,
+              "line": 3207,
               "column": 5
             }
           },
@@ -126,11 +126,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 3203,
+              "line": 3208,
               "column": 4
             },
             "end": {
-              "line": 3206,
+              "line": 3211,
               "column": 5
             }
           },
@@ -147,11 +147,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 128,
+              "line": 144,
               "column": 6
             },
             "end": {
-              "line": 131,
+              "line": 147,
               "column": 7
             }
           },
@@ -167,11 +167,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 142,
+              "line": 158,
               "column": 6
             },
             "end": {
-              "line": 148,
+              "line": 164,
               "column": 7
             }
           },
@@ -189,11 +189,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 149,
+              "line": 165,
               "column": 6
             },
             "end": {
-              "line": 152,
+              "line": 168,
               "column": 7
             }
           },
@@ -210,11 +210,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 159,
+              "line": 175,
               "column": 6
             },
             "end": {
-              "line": 162,
+              "line": 178,
               "column": 7
             }
           },
@@ -230,11 +230,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 168,
+              "line": 184,
               "column": 6
             },
             "end": {
-              "line": 171,
+              "line": 187,
               "column": 7
             }
           },
@@ -250,11 +250,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 177,
+              "line": 193,
               "column": 6
             },
             "end": {
-              "line": 180,
+              "line": 196,
               "column": 7
             }
           },
@@ -270,11 +270,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 181,
+              "line": 197,
               "column": 6
             },
             "end": {
-              "line": 183,
+              "line": 199,
               "column": 7
             }
           },
@@ -289,11 +289,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 184,
+              "line": 200,
               "column": 6
             },
             "end": {
-              "line": 192,
+              "line": 208,
               "column": 7
             }
           },
@@ -309,11 +309,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 193,
+              "line": 209,
               "column": 6
             },
             "end": {
-              "line": 195,
+              "line": 211,
               "column": 7
             }
           },
@@ -328,11 +328,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 196,
+              "line": 212,
               "column": 6
             },
             "end": {
-              "line": 198,
+              "line": 214,
               "column": 7
             }
           },
@@ -347,11 +347,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 199,
+              "line": 215,
               "column": 6
             },
             "end": {
-              "line": 201,
+              "line": 217,
               "column": 7
             }
           },
@@ -366,11 +366,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 202,
+              "line": 218,
               "column": 6
             },
             "end": {
-              "line": 204,
+              "line": 220,
               "column": 7
             }
           },
@@ -385,11 +385,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 205,
+              "line": 221,
               "column": 6
             },
             "end": {
-              "line": 208,
+              "line": 224,
               "column": 7
             }
           },
@@ -407,11 +407,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 3209,
+              "line": 3214,
               "column": 2
             },
             "end": {
-              "line": 3223,
+              "line": 3235,
               "column": 3
             }
           },
@@ -688,11 +688,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 43,
+              "line": 59,
               "column": 4
             },
             "end": {
-              "line": 47,
+              "line": 63,
               "column": 5
             }
           },
@@ -707,11 +707,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 55,
+              "line": 71,
               "column": 4
             },
             "end": {
-              "line": 60,
+              "line": 76,
               "column": 5
             }
           },
@@ -726,11 +726,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 69,
+              "line": 85,
               "column": 4
             },
             "end": {
-              "line": 92,
+              "line": 108,
               "column": 5
             }
           },
@@ -745,11 +745,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 104,
+              "line": 120,
               "column": 4
             },
             "end": {
-              "line": 149,
+              "line": 165,
               "column": 5
             }
           },
@@ -764,11 +764,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 160,
+              "line": 176,
               "column": 4
             },
             "end": {
-              "line": 170,
+              "line": 186,
               "column": 5
             }
           },
@@ -793,11 +793,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 179,
+              "line": 195,
               "column": 4
             },
             "end": {
-              "line": 193,
+              "line": 209,
               "column": 5
             }
           },
@@ -816,11 +816,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 213,
+              "line": 229,
               "column": 2
             },
             "end": {
-              "line": 218,
+              "line": 234,
               "column": 3
             }
           },
@@ -839,11 +839,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 223,
+              "line": 239,
               "column": 2
             },
             "end": {
-              "line": 225,
+              "line": 241,
               "column": 3
             }
           },
@@ -859,17 +859,63 @@
           "inheritedFrom": "PxColorsBehavior.getSeriesColors"
         },
         {
+          "name": "_isValidData",
+          "description": "returns true if the data is valid: non NaN, null or undefined",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/px-vis/px-vis-behavior-common.html",
+            "start": {
+              "line": 354,
+              "column": 4
+            },
+            "end": {
+              "line": 357,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "d"
+            }
+          ],
+          "inheritedFrom": "PxVisBehavior.dataChecks"
+        },
+        {
+          "name": "_isDataNotNull",
+          "description": "returns true if the data is not null",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/px-vis/px-vis-behavior-common.html",
+            "start": {
+              "line": 362,
+              "column": 2
+            },
+            "end": {
+              "line": 365,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "d"
+            }
+          ],
+          "inheritedFrom": "PxVisBehavior.dataChecks"
+        },
+        {
           "name": "_isObjEmpty",
           "description": "Checks to see if an object is empty",
           "privacy": "protected",
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 807,
+              "line": 834,
               "column": 2
             },
             "end": {
-              "line": 815,
+              "line": 842,
               "column": 3
             }
           },
@@ -891,11 +937,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 823,
+              "line": 850,
               "column": 2
             },
             "end": {
-              "line": 828,
+              "line": 855,
               "column": 3
             }
           },
@@ -917,11 +963,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 836,
+              "line": 863,
               "column": 2
             },
             "end": {
-              "line": 841,
+              "line": 868,
               "column": 3
             }
           },
@@ -943,11 +989,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 849,
+              "line": 876,
               "column": 2
             },
             "end": {
-              "line": 858,
+              "line": 885,
               "column": 3
             }
           },
@@ -969,11 +1015,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 860,
+              "line": 887,
               "column": 2
             },
             "end": {
-              "line": 872,
+              "line": 899,
               "column": 3
             }
           },
@@ -992,11 +1038,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 880,
+              "line": 907,
               "column": 2
             },
             "end": {
-              "line": 885,
+              "line": 912,
               "column": 3
             }
           },
@@ -1018,11 +1064,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 892,
+              "line": 919,
               "column": 2
             },
             "end": {
-              "line": 897,
+              "line": 924,
               "column": 3
             }
           },
@@ -1044,11 +1090,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 902,
+              "line": 929,
               "column": 2
             },
             "end": {
-              "line": 904,
+              "line": 931,
               "column": 3
             }
           },
@@ -1067,11 +1113,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 909,
+              "line": 936,
               "column": 2
             },
             "end": {
-              "line": 926,
+              "line": 953,
               "column": 3
             }
           },
@@ -1087,40 +1133,17 @@
           "inheritedFrom": "PxVisBehavior.commonMethods"
         },
         {
-          "name": "_checkColorType",
-          "description": "Checks if a color is already hex or rgb, if must be a colors obj",
-          "privacy": "protected",
-          "sourceRange": {
-            "file": "bower_components/px-vis/px-vis-behavior-common.html",
-            "start": {
-              "line": 931,
-              "column": 2
-            },
-            "end": {
-              "line": 936,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "c"
-            }
-          ],
-          "inheritedFrom": "PxVisBehavior.commonMethods"
-        },
-        {
           "name": "_hexToRgb",
           "description": "converts a hex to rgb color",
           "privacy": "protected",
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 941,
+              "line": 958,
               "column": 2
             },
             "end": {
-              "line": 952,
+              "line": 969,
               "column": 3
             }
           },
@@ -1139,11 +1162,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 957,
+              "line": 974,
               "column": 2
             },
             "end": {
-              "line": 974,
+              "line": 992,
               "column": 3
             }
           },
@@ -1174,11 +1197,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 979,
+              "line": 997,
               "column": 2
             },
             "end": {
-              "line": 996,
+              "line": 1015,
               "column": 3
             }
           },
@@ -1212,11 +1235,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 998,
+              "line": 1017,
               "column": 2
             },
             "end": {
-              "line": 1028,
+              "line": 1047,
               "column": 3
             }
           },
@@ -1253,11 +1276,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 1033,
+              "line": 1052,
               "column": 2
             },
             "end": {
-              "line": 1046,
+              "line": 1065,
               "column": 3
             }
           },
@@ -1279,11 +1302,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-common.html",
             "start": {
-              "line": 1048,
+              "line": 1067,
               "column": 2
             },
             "end": {
-              "line": 1050,
+              "line": 1069,
               "column": 3
             }
           },
@@ -1301,11 +1324,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 220,
+              "line": 236,
               "column": 4
             },
             "end": {
-              "line": 230,
+              "line": 246,
               "column": 5
             }
           },
@@ -1318,11 +1341,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 231,
+              "line": 247,
               "column": 4
             },
             "end": {
-              "line": 233,
+              "line": 249,
               "column": 5
             }
           },
@@ -1342,11 +1365,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 234,
+              "line": 250,
               "column": 4
             },
             "end": {
-              "line": 236,
+              "line": 252,
               "column": 5
             }
           },
@@ -1359,11 +1382,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 237,
+              "line": 253,
               "column": 4
             },
             "end": {
-              "line": 254,
+              "line": 270,
               "column": 5
             }
           },
@@ -1376,11 +1399,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 256,
+              "line": 272,
               "column": 4
             },
             "end": {
-              "line": 266,
+              "line": 282,
               "column": 5
             }
           },
@@ -1393,11 +1416,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 268,
+              "line": 284,
               "column": 4
             },
             "end": {
-              "line": 300,
+              "line": 316,
               "column": 5
             }
           },
@@ -1410,11 +1433,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 302,
+              "line": 318,
               "column": 4
             },
             "end": {
-              "line": 325,
+              "line": 341,
               "column": 5
             }
           },
@@ -1432,11 +1455,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 107,
+          "line": 123,
           "column": 10
         },
         "end": {
-          "line": 327,
+          "line": 343,
           "column": 3
         }
       },
@@ -1449,11 +1472,11 @@
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-colors.html",
             "start": {
-              "line": 19,
+              "line": 35,
               "column": 4
             },
             "end": {
-              "line": 27,
+              "line": 43,
               "column": 5
             }
           },
@@ -1463,32 +1486,32 @@
         },
         {
           "name": "domain-changed",
-          "description": "Boolean switching when the domain(s) has(have) changed\n\nServes as a trigger for many elements to redraw",
+          "description": "Number which increments up when the domain(s) has(have) changed.\n\n0 (false) indicates that domains have not been set.\n\nServes as a trigger for many elements to redraw.",
           "sourceRange": {
             "file": "bower_components/px-vis/px-vis-behavior-d3.html",
             "start": {
-              "line": 538,
+              "line": 527,
               "column": 4
             },
             "end": {
-              "line": 542,
+              "line": 531,
               "column": 5
             }
           },
           "metadata": {},
-          "type": "boolean",
-          "inheritedFrom": "PxVisBehaviorD3.domainUpdateNotify"
+          "type": "number",
+          "inheritedFrom": "PxVisBehaviorD3.domainUpdate"
         },
         {
           "name": "type",
           "description": "Type of spark - one of \"line\", \"bar\" or \"winLoss\".",
           "sourceRange": {
             "start": {
-              "line": 128,
+              "line": 144,
               "column": 6
             },
             "end": {
-              "line": 131,
+              "line": 147,
               "column": 7
             }
           },
@@ -1500,11 +1523,11 @@
           "description": "A JSON array of data that will be drawn in the spark.\nSpark type 'line' requires data in the format `[{\"x\":0, \"y\":0},...]`.\nSpark type 'bar' requires a single series of positive values in the format `[1,2,3]`.\nSpark type 'winLoss' requires a single series of positive/negative values in the format `[1,-2,3]`.",
           "sourceRange": {
             "start": {
-              "line": 142,
+              "line": 158,
               "column": 6
             },
             "end": {
-              "line": 148,
+              "line": 164,
               "column": 7
             }
           },
@@ -1516,11 +1539,11 @@
           "description": "Whether the vis-spark should resize as window size is adjusted.",
           "sourceRange": {
             "start": {
-              "line": 159,
+              "line": 175,
               "column": 6
             },
             "end": {
-              "line": 162,
+              "line": 178,
               "column": 7
             }
           },
@@ -1532,11 +1555,11 @@
           "description": "Width of the spark.",
           "sourceRange": {
             "start": {
-              "line": 168,
+              "line": 184,
               "column": 6
             },
             "end": {
-              "line": 171,
+              "line": 187,
               "column": 7
             }
           },
@@ -1548,11 +1571,11 @@
           "description": "Height of the spark.",
           "sourceRange": {
             "start": {
-              "line": 177,
+              "line": 193,
               "column": 6
             },
             "end": {
-              "line": 180,
+              "line": 196,
               "column": 7
             }
           },
@@ -1564,11 +1587,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 205,
+              "line": 221,
               "column": 6
             },
             "end": {
-              "line": 208,
+              "line": 224,
               "column": 7
             }
           },
@@ -1582,7 +1605,7 @@
           "name": "domain-changed-changed",
           "description": "Fired when the `domainChanged` property changes.",
           "metadata": {},
-          "inheritedFrom": "PxVisBehaviorD3.domainUpdateNotify"
+          "inheritedFrom": "PxVisBehaviorD3.domainUpdate"
         }
       ],
       "styling": {
